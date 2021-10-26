@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    style(type="text/css").
+      body {
+        font-family: monospace;
+      }
+      ol { counter-reset: item }
+      li.ordered{ display: block }
+      li.ordered:before { content: counters(item, ".") " "; counter-increment: item }
+  script(type='text/javascript').
+    var values = !{values}
+  script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+  
+  body
+    div
+      h1= "GeoVolume API"
+      p
+        | This is an experimental implementation of the 
+        a(href="https://docs.ogc.org/per/20-029.html") Geovolume API
+      p 
+        a(href="./conformance") Conformance 
+      p
+        a(href="./api") API 
+      h1
+        a(href="./collections") Collections 
+        
+      div(id="collections")
+      script(src='./src/displayCollections.js')

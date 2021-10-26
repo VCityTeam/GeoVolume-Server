@@ -1,0 +1,275 @@
+{
+  "links": [
+    {
+      "href": "http://localhost:3000/collections",
+      "rel": "self",
+      "type": "application/json",
+      "title": "this document"
+    }
+  ],
+  "collections": [
+    {
+      "id": "LyonMetropole",
+      "title": "Lyon Metropole",
+      "collectionType": "3d-container",
+      "extent": {
+        "spatial": {
+          "bbox": [
+            1836000,
+            5184617,
+            375,
+            1838000,
+            517900,
+            585
+          ],
+          "crs": "EPSG:4326"
+        }
+      },
+      "links": [
+        {
+          "title": "3D Buildings of Lyon",
+          "href": "http://localhost:3000/collections/LyonMetropole",
+          "rel": "self",
+          "type": "application/json"
+        }
+      ],
+      "content": [],
+      "children": [
+        {
+          "id": "2015",
+          "title": "Lyon Metropole 2015",
+          "collectionType": "3d-container",
+          "extent": {
+            "spatial": {
+              "bbox": [
+                1836000,
+                5184617,
+                375,
+                1838000,
+                517900,
+                585
+              ],
+              "crs": "EPSG:4326"
+            },
+            "temporal": "2015"
+          },
+          "links": [
+            {
+              "title": "3D Buildings of Lyon",
+              "href": "http://localhost:3000/collections/LyonMetropole/2015",
+              "rel": "self",
+              "type": "application/json"
+            }
+          ],
+          "content": [],
+          "children": [
+            {
+              "id": "limonest_2015",
+              "title": "Limonest 2015",
+              "collectionType": "3d-container",
+              "extent": {
+                "spatial": {
+                  "bbox": [
+                    1836000,
+                    5184617,
+                    375,
+                    1838000,
+                    517900,
+                    585
+                  ],
+                  "crs": "EPSG:4326"
+                }
+              },
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "http://localhost:3000/collections/LyonMetropole/2015/limonest_2015",
+                  "type": "application/json",
+                  "title": "Limonest 2015"
+                }
+              ],
+              "content": [
+                {
+                  "rel": "original",
+                  "href": "linklyon1",
+                  "type": "application/citygml",
+                  "title": "citygml"
+                },
+                {
+                  "rel": "alternate",
+                  "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/2015/Limonest_2015/tileset.json",
+                  "type": "application/json+3dtiles",
+                  "title": "citygml_3dtiles"
+                },
+                {
+                  "rel": "alternate",
+                  "href": "linktopc",
+                  "type": "application/json+3dtiles",
+                  "title": "point_cloud"
+                }
+              ],
+              "children": [
+                {
+                  "id": "batiment_carl",
+                  "title": "IFC Carl",
+                  "collectionType": "3d-container",
+                  "extent": {
+                    "spatial": {
+                      "bbox": [
+                        918000,
+                        5290500,
+                        0,
+                        919000,
+                        5290600,
+                        160
+                      ],
+                      "crs": "EPSG:3946"
+                    }
+                  },
+                  "links": [
+                    {
+                      "rel": "self",
+                      "href": "http://localhost:3000/collections/LyonMetropole/2015/limonest_2015/batiment_carl",
+                      "type": "application/json",
+                      "title": "batiment_carl"
+                    }
+                  ],
+                  "content": [
+                    {
+                      "rel": "alternate",
+                      "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/IFC-Building/tileset.json",
+                      "type": "application/json+3dtiles",
+                      "title": "ifc_3dtiles"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "bron",
+              "title": "Bron 2015",
+              "collectionType": "3d-container",
+              "extent": {
+                "spatial": {
+                  "bbox": [
+                    1836000,
+                    5184617,
+                    375,
+                    1838000,
+                    517900,
+                    585
+                  ],
+                  "crs": "EPSG:4326"
+                }
+              },
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "http://localhost:3000/collections/LyonMetropole/2015/bron",
+                  "type": "application/json",
+                  "title": "Bron 2015"
+                }
+              ],
+              "content": [
+                {
+                  "rel": "original",
+                  "href": "linklyon1",
+                  "type": "application/citygml",
+                  "title": "citygml"
+                },
+                {
+                  "rel": "alternate",
+                  "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/2015/Bron_2015/tileset.json",
+                  "type": "application/json+3dtiles",
+                  "title": "3dtiles"
+                },
+                {
+                  "rel": "alternate",
+                  "href": "linktopc",
+                  "type": "application/json+3dtiles",
+                  "title": "point_cloud"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2018",
+          "title": "Lyon Metropole 2018",
+          "collectionType": "3d-container",
+          "extent": {
+            "spatial": {
+              "bbox": [
+                1836000,
+                5184617,
+                375,
+                1838000,
+                517900,
+                585
+              ],
+              "crs": "EPSG:4326"
+            },
+            "temporal": "2018"
+          },
+          "links": [
+            {
+              "title": "3D Buildings of Lyon",
+              "href": "http://localhost:3000/collections/LyonMetropole/2018",
+              "rel": "self",
+              "type": "application/json"
+            }
+          ],
+          "content": [],
+          "children": [
+            {
+              "id": "limonest_2018",
+              "title": "Limonest 2018",
+              "collectionType": "3d-container",
+              "extent": {
+                "spatial": {
+                  "bbox": [
+                    1836000,
+                    5184617,
+                    375,
+                    1838000,
+                    517900,
+                    585
+                  ],
+                  "crs": "EPSG:4326"
+                }
+              },
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "http://localhost:3000/collections/LyonMetropole/2018/limonest",
+                  "type": "application/json",
+                  "title": "Limonest 2018"
+                }
+              ],
+              "content": [
+                {
+                  "rel": "original",
+                  "href": "linklyon1",
+                  "type": "application/citygml",
+                  "title": "citygml"
+                },
+                {
+                  "rel": "alternate",
+                  "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/2018/Limonest_2018/tileset.json",
+                  "type": "application/json+3dtiles",
+                  "title": "3dtiles"
+                },
+                {
+                  "rel": "alternate",
+                  "href": "linktopc",
+                  "type": "application/json+3dtiles",
+                  "title": "point_cloud"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
