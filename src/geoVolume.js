@@ -1,3 +1,4 @@
+var boxIntersect = require('box-intersect')
 
 class GeoVolume {
     constructor(jsonObject){
@@ -8,6 +9,26 @@ class GeoVolume {
         this.links = jsonObject.links;
         this.content = jsonObject.content;
         this.children = this.fillChildren(jsonObject.children);
+    }
+
+    isInstersectingWithBbox(bbox,epsg){
+        console.log(this.extent.spatial.bbox);
+        console.log(this.extent.spatial.epsg);
+    }
+
+    isBboxContainedInExtent(bbox,epsg){
+        console.log(this.extent.spatial.bbox);
+        console.log(this.extent.spatial.epsg);
+    }
+
+    getGeovolumeContainingBbox(bbox,epsg){
+        if(this.children){
+            for(let child of this.children){
+                if(child.isBboxContainedInExtent)
+                    return child.getChildContainingBbox(bbox,epsg);
+            }
+        }
+        return this;
     }
 
     fillChildren(jsonChildren) {

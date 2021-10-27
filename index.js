@@ -1,6 +1,6 @@
 const express = require("express");
 const home = require("./routes/home");
-const collections = require("./routes/collections");
+const collections = require("./routes/collectionsRouting");
 
 const cors = require("./src/cors");
 const {queryParamsToLower} = require("./src/querySanitizers");

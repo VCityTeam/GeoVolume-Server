@@ -51,20 +51,55 @@ class CollectionsHandler {
       return false;
     }
 
-    getGeoVolumeFromPath(path) {
+    buildBboxFromUrlQuery(bboxAsQuery){
+      let splitedQuery = bboxAsQuery.split(',');
+      if(splitedQuery.length != 4 && splitedQuery.length != 6)
+        return null;
+      var bbox = new Array();
+      for (let value of splitedQuery){
+        bbox.push(parseFloat(value));
+      }
+      return bbox; 
+    }
+
+    getGeoVolumeFromBboxAsQuery(geovolumes, urlQuery){
+      if(!geovolumes) return null;
+      let bbox = this.buildBboxFromUrlQuery(urlQuery.bbox);
+      if(!bbox) return null;
+      let epsg = urlQuery.epsg;
+      let intersectingGeoVolumes; 
+      for(let geoVolume of geovolumes){
+        let tmp;
+        if(geoVolume.isBboxContainedInExtent(bbox,epsg))
+            tmp = getGeovolumeContainingBbox(bbox,epsg);
+        else if(geoVolume.isInstersectingWithBbox(bbox,epsg))
+            tmp = geoVolume;
+        
+        if(tmp) {
+          if(!intersectingGeoVolumes) intersectingGeoVolumes = new Array();
+          intersectingGeoVolumes.add(tmp);
+        }
+      }
+      return intersectingGeoVolumes;
+    }
+
+    getGeoVolumesFromPath(path) {
+      if(path == '')
+        return this.collections;
       let ids = path.split('/');
       let geoVolume;
       for(let id of ids){
-        if(id == '') continue;
         if(!geoVolume) geoVolume = this.getGeovolumeInCollections(id);
         else {
           if(geoVolume.hasChildById(id)){
             geoVolume = geoVolume.getChildById(id);
           }
-          else return false;
+          else return null;
         }
       }
-      return geoVolume;
+      let geoVolumes = new Array();
+      geoVolumes.push(geoVolume);
+      return geoVolumes;
     }
     
   
