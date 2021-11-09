@@ -66,30 +66,33 @@ class CollectionsHandler {
       if(!geovolumes) return null;
       let bbox = this.buildBboxFromUrlQuery(urlQuery.bbox);
       if(!bbox) return null;
-      let epsg = urlQuery.epsg;
+      let crs = urlQuery.crs;
       let intersectingGeoVolumes; 
       for(let geoVolume of geovolumes){
         let tmp;
-        if(geoVolume.isBboxContainedInExtent(bbox,epsg))
-            tmp = getGeovolumeContainingBbox(bbox,epsg);
-        else if(geoVolume.isInstersectingWithBbox(bbox,epsg))
-            tmp = geoVolume;
+        if(geoVolume.isBboxContainedInExtent(bbox,crs))
+            tmp = geoVolume.getGeovolumeContainingBbox(bbox,crs);
+        // else if(geoVolume.isInstersectingWithBbox(bbox,crs))
+        //     tmp = geoVolume;
         
         if(tmp) {
           if(!intersectingGeoVolumes) intersectingGeoVolumes = new Array();
-          intersectingGeoVolumes.add(tmp);
+          intersectingGeoVolumes.push(tmp);
         }
       }
       return intersectingGeoVolumes;
     }
 
     getGeoVolumesFromPath(path) {
-      if(path == '')
+      if(path == '' || path == '/')
         return this.collections;
       let ids = path.split('/');
       let geoVolume;
       for(let id of ids){
-        if(!geoVolume) geoVolume = this.getGeovolumeInCollections(id);
+        if(!geoVolume) {
+          geoVolume = this.getGeovolumeInCollections(id);
+          if(!geoVolume) return null;
+        } 
         else {
           if(geoVolume.hasChildById(id)){
             geoVolume = geoVolume.getChildById(id);
@@ -97,9 +100,7 @@ class CollectionsHandler {
           else return null;
         }
       }
-      let geoVolumes = new Array();
-      geoVolumes.push(geoVolume);
-      return geoVolumes;
+      return new Array().push(geoVolume);
     }
     
   
