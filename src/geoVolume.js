@@ -11,12 +11,13 @@ class GeoVolume {
     this.children = this.fillChildren(jsonObject.children);
   }
 
-  isInstersectingWithBbox(bbox, crs) {
-    // console.log(this.extent.spatial.bbox);
-    // console.log(this.extent.crs);
+  isExtentInstersectingWithBbox(bbox, crs) {
+    let bboxReprojected = this.reprojectBbox(bbox,crs);
+    let extentBbox = this.extent.spatial.bbox;
+    return boxIntersect([bboxReprojected,extentBbox]).length > 0;
   }
 
-  isBboxContainedInExtent(bbox, crs) {
+  reprojectBbox(bbox,crs){
     let sourceCrs = crs ? crs : "EPSG:4326";
     let destCrs = this.extent.spatial.crs
       ? this.extent.spatial.crs
@@ -37,12 +38,17 @@ class GeoVolume {
       minBbox = proj4(sourceCrs, destCrs).forward([bbox[0], bbox[1]]);
       maxBbox = proj4(sourceCrs, destCrs).forward([bbox[2], bbox[3]]);
     }
+    return minBbox.concat(maxBbox);
+  }
+
+  isBboxContainedInExtent(bbox, crs) {
+    let bboxReprojected = this.reprojectBbox(bbox,crs);
     let extentBbox = this.extent.spatial.bbox;
     return (
-      extentBbox[0] <= minBbox[0] &&
-      extentBbox[1] <= minBbox[1] &&
-      extentBbox[3] >= maxBbox[0] &&
-      extentBbox[4] >= maxBbox[1]
+      extentBbox[0] <= bboxReprojected[0] &&
+      extentBbox[1] <= bboxReprojected[1] &&
+      extentBbox[3] >= bboxReprojected[3] &&
+      extentBbox[4] >= bboxReprojected[4]
     );
   }
 

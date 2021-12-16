@@ -62,6 +62,19 @@ class CollectionsHandler {
       return bbox; 
     }
 
+    clearNonIntersectingGeoVolumeChildren(geoVolume,bbox,crs){
+      if (geoVolume.children){
+        let children_intersecting = new Array();
+        for(let child of geoVolume.children){
+          if (child.isExtentInstersectingWithBbox(bbox,crs)){
+            children_intersecting.push(child);
+          }
+        }
+        geoVolume.children = children_intersecting;
+      }
+      return geoVolume;
+    }
+
     getGeoVolumeFromBboxAsQuery(geovolumes, urlQuery){
       if(!geovolumes) return null;
       let bbox = this.buildBboxFromUrlQuery(urlQuery.bbox);
@@ -72,14 +85,16 @@ class CollectionsHandler {
         let tmp;
         if(geoVolume.isBboxContainedInExtent(bbox,crs))
             tmp = geoVolume.getGeovolumeContainingBbox(bbox,crs);
-        // else if(geoVolume.isInstersectingWithBbox(bbox,crs))
-        //     tmp = geoVolume;
+        else if(geoVolume.isInstersectingWithBbox(bbox,crs))
+            tmp = geoVolume;
         
         if(tmp) {
+          tmp = this.clearNonIntersectingGeoVolumeChildren(tmp,bbox,crs);
           if(!intersectingGeoVolumes) intersectingGeoVolumes = new Array();
           intersectingGeoVolumes.push(tmp);
         }
       }
+
       return intersectingGeoVolumes;
     }
 
@@ -100,7 +115,7 @@ class CollectionsHandler {
           else return null;
         }
       }
-      return new Array().push(geoVolume);
+      return geoVolume;
     }
     
   
