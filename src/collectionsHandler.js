@@ -89,7 +89,7 @@ class CollectionsHandler {
             tmp = geoVolume;
         
         if(tmp) {
-          tmp = this.clearNonIntersectingGeoVolumeChildren(tmp,bbox,crs);
+          //tmp = this.clearNonIntersectingGeoVolumeChildren(tmp,bbox,crs);
           if(!intersectingGeoVolumes) intersectingGeoVolumes = new Array();
           intersectingGeoVolumes.push(tmp);
         }
