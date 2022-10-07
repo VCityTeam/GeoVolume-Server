@@ -20,6 +20,7 @@ app.use(queryParamsToLower);
 
 app.use("/",home);
 app.use("/collections",collections);
+app.use("/assets",express.static('./assets'));
 app.use('/src', 
     express.static('./src'),
     express.static('./node_modules/jquery/dist')

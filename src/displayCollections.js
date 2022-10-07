@@ -6,8 +6,16 @@ function writeGeoVolume(geovolume, htmlParent, i) {
 
     // Name of the geovolume
     var a_name = document.createElement("a");
-    a_name.className = "w3-btn w3-grey w3-round w3-padding-large w3-left-align";
-    a_name.innerText = geovolume.id;
+    a_name.className = "w3-btn w3-grey w3-round w3-left-align";
+    var logo = document.createElement("img");
+    logo.src = "../assets/geoVolume.svg";
+    logo.width = "20";
+    a_name.appendChild(logo); 
+
+    var i_name = document.createElement("i"); 
+    i_name.innerText = " " + geovolume.id;
+    a_name.appendChild(i_name);
+
 
 
     div.appendChild(a_name);
@@ -21,7 +29,7 @@ function writeGeoVolume(geovolume, htmlParent, i) {
     a_selfhref.innerText = "get";
     a_selfhref.type = "button";
     a_selfhref.className =
-      "w3-btn w3-green w3-round w3-padding-large w3-right-align";
+      "w3-btn w3-green w3-round w3-right-align";
     div.appendChild(a_selfhref);
 
 
@@ -30,6 +38,7 @@ function writeGeoVolume(geovolume, htmlParent, i) {
       var table = document.createElement("table");
       table.className =
         "w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white";
+      table.style.width = "fit-content";
       for (let c of geovolume.content) {
         table.innerHTML +=
           "<tr><td>" +
@@ -55,7 +64,7 @@ function writeGeoVolume(geovolume, htmlParent, i) {
       var show_children = document.createElement('button');
       show_children.innerText = "Show children »";
       show_children.onclick = () => {
-        myAccFunc(div);
+        myAccFunc(div,show_children);
       };
       show_children.className="w3-btn w3-green w3-round w3-padding-large w3-right-align";
       div.appendChild(show_children);
@@ -67,17 +76,23 @@ function writeGeoVolume(geovolume, htmlParent, i) {
   }
 }
 
-function myAccFunc(a) {
+function myAccFunc(a,button) {
   var elements = a.children;
   for (let el of elements) {
     if (el.className.indexOf("geoVolume") != -1) {
       if (el.className.indexOf("w3-show") == -1) {
         el.className += " w3-show";
+        button.innerText = "Hide children «";
+        button.className = button.className.replace("w3-green","w3-red");
       } else {
         el.className = el.className.replace(" w3-show", "");
+        button.innerText = "Show children »";
+        button.className = button.className.replace("w3-red","w3-green");
+
       }
     }
   }
+
 }
 
 var div = document.getElementById("collections");
