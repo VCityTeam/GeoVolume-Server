@@ -11,29 +11,30 @@ class GeoVolume {
     this.children = this.fillChildren(jsonObject.children);
   }
 
-  isExtentInstersectingWithBbox(bbox, crs) {
-    let bboxReprojected = this.reprojectBbox(bbox,crs);
-    let extentBbox = this.extent.spatial.bbox;
-    return boxIntersect([bboxReprojected,extentBbox]).length > 0;
+  getSelfHref() {
+    for (let link of this.links) {
+      if (link.rel == "self") {
+        return link.href;
+      }
+      return "";
+    }
   }
 
-  reprojectBbox(bbox,crs){
+  isExtentInstersectingWithBbox(bbox, crs) {
+    let bboxReprojected = this.reprojectBbox(bbox, crs);
+    let extentBbox = this.extent.spatial.bbox;
+    return boxIntersect([bboxReprojected, extentBbox]).length > 0;
+  }
+
+  reprojectBbox(bbox, crs) {
     let sourceCrs = crs ? crs : "EPSG:4326";
     let destCrs = this.extent.spatial.crs
       ? this.extent.spatial.crs
       : "EPSG:4326";
     let minBbox, maxBbox;
     if (bbox.length == 6) {
-      minBbox = proj4(sourceCrs, destCrs).forward([
-        bbox[0],
-        bbox[1],
-        bbox[2],
-      ]);
-      maxBbox = proj4(sourceCrs, destCrs).forward([
-        bbox[3],
-        bbox[4],
-        bbox[5],
-      ]);
+      minBbox = proj4(sourceCrs, destCrs).forward([bbox[0], bbox[1], bbox[2]]);
+      maxBbox = proj4(sourceCrs, destCrs).forward([bbox[3], bbox[4], bbox[5]]);
     } else {
       minBbox = proj4(sourceCrs, destCrs).forward([bbox[0], bbox[1]]);
       maxBbox = proj4(sourceCrs, destCrs).forward([bbox[2], bbox[3]]);
@@ -42,7 +43,7 @@ class GeoVolume {
   }
 
   isBboxContainedInExtent(bbox, crs) {
-    let bboxReprojected = this.reprojectBbox(bbox,crs);
+    let bboxReprojected = this.reprojectBbox(bbox, crs);
     let extentBbox = this.extent.spatial.bbox;
     return (
       extentBbox[0] <= bboxReprojected[0] &&

@@ -1,34 +1,32 @@
 doctype html
 html(lang="en")
   head
-    style(type="text/css").
-      body {
-        font-family: monospace;
-      }
-      ol { counter-reset: item }
-      li.ordered{ display: block }
-      li.ordered:before { content: counters(item, ".") " "; counter-increment: item }
+    style 
+      include style.css
+    link(rel="stylesheet", href="https://www.w3schools.com/w3css/4/w3.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Raleway")
   script(type='text/javascript').
     var values = !{values}
   script(src='https://code.jquery.com/jquery-3.3.1.min.js')
   
-  body
-    div
-      h1= "GeoVolume API"
-      p
-        | This is an experimental implementation of the 
-        a(href="https://docs.ogc.org/per/20-029.html") Geovolume API
-      p 
-        a(href="./conformance") Conformance 
-      p
-        a(href="./api") API 
-      
+  body(class='w3-light-grey')
+    div(class='w3-bar w3-top w3-brown w3-large')
+      a(class='class="w3-bar-item w3-right"' href="https://docs.ogc.org/per/20-029.html" style='color:white') Geovolume API
+      |  
+      a(href="./conformance" style='color:white') Conformance
+      |        
+      a(href="./api" style='color:white') API
+    
+    div(class='w3-main' style='margin-top:43px;')
+
       h1
-        a(href="./collections") Collections 
+        a(class='w3-btn w3-grey w3-round') Collections
+        a(class='w3-btn w3-green w3-round w3-center' href="./collections") Get 
         
+      
       div(id="collections")
         script(src='./src/displayCollections.js')
-      
+
       p
         | Current supported CRS : 
         a(href="https://epsg.io/3946") EPSG:3946,
