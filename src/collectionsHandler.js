@@ -67,6 +67,7 @@ class CollectionsHandler {
         let children_intersecting = new Array();
         for(let child of geoVolume.children){
           if (child.isExtentInstersectingWithBbox(bbox,crs)){
+            this.clearNonIntersectingGeoVolumeChildren(child,bbox,crs)
             children_intersecting.push(child);
           }
         }
@@ -89,7 +90,7 @@ class CollectionsHandler {
             tmp = geoVolume;
         
         if(tmp) {
-          //tmp = this.clearNonIntersectingGeoVolumeChildren(tmp,bbox,crs);
+          tmp = this.clearNonIntersectingGeoVolumeChildren(tmp,bbox,crs);
           if(!intersectingGeoVolumes) intersectingGeoVolumes = new Array();
           intersectingGeoVolumes.push(tmp);
         }
