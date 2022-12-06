@@ -5,7 +5,7 @@ const pathToCollections = "./assets/collections.json";
 
 const CollectionsHandler = require("../src/collectionsHandler");
 
-const collections = new CollectionsHandler(pathToCollections);
+var collections = new CollectionsHandler(pathToCollections);
 
 let router = express.Router();
 
