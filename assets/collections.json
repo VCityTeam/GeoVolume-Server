@@ -122,6 +122,12 @@
           "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/2015/Limonest_2015/tileset.json?id=2855",
           "type": "application/json+3dtiles",
           "title": "citygml_3dtiles"
+        },
+        {
+          "rel": "alternate",
+          "href": "http://training-iot.bl-predict.research-bl.com:8086/query?",
+          "type": "application/sensor",
+          "title": "sensor"
         }
       ]
     },
