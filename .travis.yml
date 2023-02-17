@@ -1,0 +1,12 @@
+# @format
+os: linux
+dist: focal
+language: node_js
+node_js:
+  - 16
+
+jobs:
+  include:
+    - script:
+        - npm install
+      name: 'build and test'
