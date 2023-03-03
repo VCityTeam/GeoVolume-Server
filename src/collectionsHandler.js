@@ -1,6 +1,6 @@
 const fs = require("fs");
 const boxIntersect = require("box-intersect");
-const GeoVolume = require("./GeoVolume");
+const GeoVolume = require("./geoVolume");
 
 const indexPath = "../assets/index.html";
 
