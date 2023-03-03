@@ -39,6 +39,8 @@ function writeGeoVolume(geovolume, htmlParent, i) {
       table.className =
         "w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white";
       table.style.width = "fit-content";
+      table.innerHTML += "<tr><th>Variant name</th><th>Type</th><th>Accessor</th><th>Locator</th></tr>"
+
       for (let c of geovolume.content) {
         table.innerHTML +=
           "<tr><td>" +
@@ -47,7 +49,11 @@ function writeGeoVolume(geovolume, htmlParent, i) {
           c.href +
           '">' +
           c.type +
-          "</td></li></tr>";
+          '</td><td>' +
+          c.variantIdentifier +
+          '</td><td>' +
+          c.href +
+          '</td></li></tr>';
       }
       div.appendChild(table);
     }
