@@ -1,6 +1,6 @@
 ## GeoVolume Server
 
-This GeoVolume Server is an implementation of a simple NodeJs server that is able to receive API request (as describe [here](https://docs.ogc.org/per/20-029.html)).
+This GeoVolume Server is an implementation of a simple NodeJs server that is able to receive GeoVolume API request (as describe [here](https://docs.ogc.org/per/20-029.html)).
 
 To know more about what is the GeoVolume API, go [here](https://github.com/VCityTeam/UD-SV/blob/master/ImplementationKnowHow/Geovolumes.md)
 ### Geovolume collection
