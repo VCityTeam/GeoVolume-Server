@@ -1,7 +1,7 @@
 {
   "links": [
     {
-      "href": "http://localhost:3000/collections",
+      "href": "./collections",
       "rel": "self",
       "type": "application/json",
       "title": "this document"
@@ -28,7 +28,7 @@
       "links": [
         {
           "title": "3D Buildings of Lyon",
-          "href": "http://localhost:3000/collections/LyonMetropole",
+          "href": "./collections/LyonMetropole",
           "rel": "self",
           "type": "application/json"
         }
@@ -65,7 +65,7 @@
       "links": [
         {
           "rel": "self",
-          "href": "http://localhost:3000/collections/limonest",
+          "href": "./collections/limonest",
           "type": "application/json",
           "title": "Limonest"
         }
@@ -109,7 +109,7 @@
       "links": [
         {
           "rel": "self",
-          "href": "http://localhost:3000/collections/batiment_carl",
+          "href": "./collections/batiment_carl",
           "type": "application/json",
           "title": "batiment_carl"
         }
@@ -166,7 +166,7 @@
       "links": [
         {
           "rel": "self",
-          "href": "http://localhost:3000/collections/villeurbanne",
+          "href": "./collections/villeurbanne",
           "type": "application/json",
           "title": "Villeurbanne"
         }
@@ -196,7 +196,7 @@
         },
         {
           "rel": "alternate",
-          "href": "assets/tileset/villeurbanne_tileset/tileset.json",
+          "href": "./assets/tileset/villeurbanne_tileset/tileset.json",
           "type": "application/json+pnts",
           "title": "PC as 3DTiles",
           "variantIdentifier":"file"
@@ -225,7 +225,7 @@
       "links": [
         {
           "rel": "self",
-          "href": "http://localhost:3000/collections/batiment_doua",
+          "href": "./collections/batiment_doua",
           "type": "application/json",
           "title": "batiment_doua"
         }
@@ -268,7 +268,7 @@
         },
         {
           "rel": "alternate",
-          "href": "assets/tileset/villeurbanne_tileset/tileset.json",
+          "href": "./assets/tileset/villeurbanne_tileset/tileset.json",
           "type": "application/json+pnts",
           "title": "PC as 3DTiles",
           "variantIdentifier":"extent"
