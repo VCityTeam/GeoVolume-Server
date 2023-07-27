@@ -117,7 +117,7 @@
       "content": [
         {
           "rel": "alternate",
-          "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/IFC-Building/tileset.json",
+          "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/2018/IFC-Building/tileset.json",
           "type": "application/json+3dtiles",
           "title": "ifc_3dtiles",
           "variantIdentifier":"file"
@@ -196,7 +196,7 @@
         },
         {
           "rel": "alternate",
-          "href": "./assets/tileset/villeurbanne_tileset/tileset.json",
+          "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/2018/Villeurbanne_2018_point_cloud/tileset.json",
           "type": "application/json+pnts",
           "title": "PC as 3DTiles",
           "variantIdentifier":"file"
@@ -233,7 +233,7 @@
       "content": [
         {
           "rel": "alternate",
-          "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/ifc_chaufferie_doua/tileset.json",
+          "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/2018/ifc_chaufferie_doua/tileset.json",
           "type": "application/json+3dtiles",
           "title": "ifc_3dtiles",
           "variantIdentifier":"file"
@@ -268,7 +268,7 @@
         },
         {
           "rel": "alternate",
-          "href": "./assets/tileset/villeurbanne_tileset/tileset.json",
+          "href": ".https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/2018/Villeurbanne_2018_point_cloud/tileset.json",
           "type": "application/json+pnts",
           "title": "PC as 3DTiles",
           "variantIdentifier":"extent"
