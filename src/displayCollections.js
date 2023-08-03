@@ -69,10 +69,10 @@ function writeGeoVolume(geovolume, htmlParent, i) {
     if (geovolume.children.length > 0) {
       var show_children = document.createElement('button');
       show_children.innerText = "Show children »";
+      show_children.className="w3-btn w3-green w3-round w3-padding-large w3-right-align";
       show_children.onclick = () => {
         myAccFunc(div,show_children);
       };
-      show_children.className="w3-btn w3-green w3-round w3-padding-large w3-right-align";
       div.appendChild(show_children);
       for (let child of geovolume.children) {
         writeGeoVolume(child, div, i + 1);

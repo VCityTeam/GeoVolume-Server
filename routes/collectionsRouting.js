@@ -11,6 +11,7 @@ let router = express.Router();
 
 router.route("/*").get((req, res) => {
   res.set("Content-Type", "application/json");
+  res.set("Access-Control-Allow-Origin", "*")
   collections.getCollectionsFromJson();
   let geovolumesRequested = collections.getGeoVolumesFromPath(req.params[0]);
   if (!geovolumesRequested) {
