@@ -20,7 +20,7 @@
             -100,
             5,
             45.87,
-            1000
+            800
           ],
           "crs": "EPSG:4326"
         }
@@ -39,7 +39,12 @@
           "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/2018/Lyon_2018/tileset.json",
           "type": "application/json+3dtiles",
           "title": "citygml_3dtiles",
-          "variantIdentifier": "file"
+          "variantIdentifier": "file",
+          "extras":{
+          "nb_feature" : 8059,
+          "nb_points" : 2455194,
+          "distance" : [239.78563, 0.0]
+          }
         }
       ],
       "children": [   
@@ -55,7 +60,7 @@
             0,
             4.8,
             45.86,
-            800
+            700
           ],
           "crs": "EPSG:4326"
         },
@@ -82,7 +87,12 @@
           "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/2015/Limonest_2015/tileset.json",
           "type": "application/json+3dtiles",
           "title": "citygml_3dtiles",
-          "variantIdentifier": "file"
+          "variantIdentifier": "file",
+          "extras":{
+          "nb_feature" : 1282,
+          "nb_points" : 329016,
+          "distance" : [145.52, 0.0]
+          }
         }
       ],
       "children": [
@@ -115,10 +125,27 @@
           "content": [
             {
               "rel": "alternate",
-              "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/2018/IFC-Building/tileset.json",
+              "href": "http://localhost:8000/assets/layer/carl/tileset.json",
               "type": "application/json+3dtiles",
               "title": "ifc_3dtiles",
-              "variantIdentifier": "file"
+              "variantIdentifier": "file",
+              "extras":{
+              "nb_feature" : 11110,
+              "nb_points" : 8656308,
+              "distance" : [49.6, 0.005]
+              }
+            },
+            {
+              "rel": "alternate",
+              "href": "http://localhost:8000/assets/layer/bth_carl/tileset.json",
+              "type": "application/json+3dtiles",
+              "title": "ifc_3dtiles_bth",
+              "variantIdentifier": "file",
+              "extras":{
+              "nb_feature" : 11110,
+              "nb_points" : 8656308,
+              "distance" : [49.6, 0.005]
+              }
             },
             {
               "rel": "alternate",
@@ -139,7 +166,12 @@
               "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/2015/Limonest_2015/tileset.json",
               "type": "application/json+3dtiles",
               "title": "citygml_3dtiles",
-              "variantIdentifier": "TileID=3&Batch_ID=134"
+              "variantIdentifier": "TileID=3&Batch_ID=134",
+              "extras":{
+              "nb_feature" : 1,
+              "nb_points" : 174,
+              "distance" : [56.9, 0.5]
+              }
             },
             {
               "rel": "alternate",
@@ -191,7 +223,12 @@
           "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/Villeurbanne_2018_TileSet/tileset.json",
           "type": "application/json+3dtiles",
           "title": "3dtiles",
-          "variantIdentifier": "file"
+          "variantIdentifier": "file",
+          "extras":{
+          "nb_feature" : 8059,
+          "nb_points" : 2455194,
+          "distance" : [239.78563, 0.0]
+          }
         },
         {
           "rel": "alternate",
@@ -218,10 +255,10 @@
               "bbox": [
                 1845820,
                 5177430,
-                -100,
+                100,
                 1845890,
                 5177499,
-                500
+                320
               ],
               "crs": "EPSG:3946"
             },
@@ -238,10 +275,39 @@
           "content": [
             {
               "rel": "alternate",
-              "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/2018/ifc_chaufferie_doua/tileset.json",
+              "href": "http://localhost:8000/assets/layer/bth/tileset.json",
+              "type": "application/json+3dtiles",
+              "title": "ifc_3dtiles_bth",
+              "variantIdentifier": "file",
+              "extras":{
+              "nb_feature": 8740,
+              "nb_points": 1000000,
+              "distance": [43.09, 0.0002]
+              }
+            },         
+            {
+              "rel": "alternate",
+              "href": "http://localhost:8000/assets/layer/doua/tileset.json",
+              "type": "application/json+3dtiles",
+              "title": "ifc_3dtiles_external",
+              "variantIdentifier": "external",
+              "extras":{
+              "nb_feature": 1049,
+              "nb_points": 1000000,
+              "distance": [43.09, 0.0002]
+              }
+            },   
+            {
+              "rel": "alternate",
+              "href": "http://localhost:8000/assets/layer/doua/tileset.json",
               "type": "application/json+3dtiles",
               "title": "ifc_3dtiles",
-              "variantIdentifier": "file"
+              "variantIdentifier": "file",
+              "extras":{
+              "nb_feature": 8740,
+              "nb_points": 846204,
+              "distance": [43.09, 0.0002]
+              }
             },
             {
               "rel": "original",
@@ -255,7 +321,12 @@
               "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/Villeurbanne_2018_TileSet/tileset.json",
               "type": "application/json+3dtiles",
               "title": "citygml_3dtiles",
-              "variantIdentifier": "GMLID=69266AE7"
+              "variantIdentifier": "GMLID=69266AE7",
+              "extras":{
+              "nb_feature": 1,
+              "nb_points": 1212,
+              "distance": [53, 0.125]
+              }
             },
             {
               "rel": "alternate",
@@ -276,7 +347,12 @@
               "href": "https://dataset-dl.liris.cnrs.fr/three-d-tiles-lyon-metropolis/2018/Villeurbanne_2018_point_cloud/tileset.json",
               "type": "application/json+pnts",
               "title": "PC as 3DTiles",
-              "variantIdentifier": "extent"
+              "variantIdentifier": "extent",
+              "extras":{
+                "nb_feature": 3373,
+                "nb_points": 3373,
+                "distance": [3, 0.5]
+                }
             }
           ]
         }

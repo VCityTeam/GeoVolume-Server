@@ -1,7 +1,7 @@
 const express = require("express");
 const pug = require("pug");
 
-const pathToCollections = "./assets/collections.json";
+const pathToCollections = "./assets/collections_scale.json";
 
 const CollectionsHandler = require("../src/collectionsHandler");
 
